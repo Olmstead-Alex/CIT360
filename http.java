@@ -1,6 +1,8 @@
 import java.net.*;
 import java.io.*;
+import java.security.Permission;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class http {
 
@@ -21,11 +23,28 @@ public class http {
 
             // if statements to inform user if connection was successful or not.
             if (response.equals("Not Found")) {
-                System.out.println("Connection Failed.");
+                System.out.println("Connection Failed.\n");
             }
             if (response.equals("OK")) {
-                System.out.println("Connection Successful.");
+                System.out.println("Connection Successful.\n");
             }
+
+            // is the URL using a proxy?
+            boolean proxy = connection.usingProxy();
+            if (!proxy) {
+                System.out.println("This URL is not using a proxy connection.\n");
+            }
+            if (proxy) {
+                System.out.println("This URL is using a proxy connection.\n");
+            }
+            
+            //Permission query
+            Permission request = connection.getPermission();
+            System.out.println("This is the Permission used: " + request + "\n");
+
+            //Pausing for a few seconds, so the user can read above output.
+            TimeUnit.SECONDS.sleep(5);
+
 
             //Output html from specified website.
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -40,7 +59,7 @@ public class http {
             connection.disconnect();
 
         }   //catch will catch errors, and run a stake trace for us
-            catch (IOException e) {
+            catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
