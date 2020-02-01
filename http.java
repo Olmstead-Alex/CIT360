@@ -37,7 +37,7 @@ public class http {
             if (proxy) {
                 System.out.println("This URL is using a proxy connection.\n");
             }
-            
+
             //Permission query
             Permission request = connection.getPermission();
             System.out.println("This is the Permission used: " + request + "\n");
@@ -58,7 +58,7 @@ public class http {
             //end of code. Disconnect from URL
             connection.disconnect();
 
-        }   //catch will catch errors, and run a stake trace for us
+        }   //catch will catch errors, and run a stack trace for us
             catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
