@@ -13,19 +13,10 @@ public class view extends JFrame {
     private JTextField calcSolution = new JTextField(10);
 
     view(){
-        JPanel addPanel = new JPanel();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize (600, 800);
-
-        addPanel.add(firstNumber);
-        addPanel.add(additionLabel);
-        addPanel.add(secondNumber);
-        addPanel.add(calculateButton);
-        addPanel.add(calcSolution);
-
-        this.add(addPanel);
-
         JPanel multiplyPanel = new JPanel();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize (600, 200);
+        
         multiplyPanel.add(firstNumber);
         multiplyPanel.add(multiplyLabel);
         multiplyPanel.add(secondNumber);
