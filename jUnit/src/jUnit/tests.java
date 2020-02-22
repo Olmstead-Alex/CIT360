@@ -10,6 +10,6 @@ public class tests {
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString());
         }
-        System.out.println("Testing completed. \nResult: All tests are = "+result.wasSuccessful());
+        System.out.println("Testing completed. \nResult: All tests are "+result.wasSuccessful());
     }
 }
