@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "Game" table = "GAME">
+
+        <meta attribute = "class-description">
+            This class contains the game detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "Name" column = "gameName" type = "string"/>
+        <property name = "developer" column = "developer" type = "string"/>
+        <property name = "rating" column = "rating" type = "int"/>
+
+    </class>
+</hibernate-mapping>
