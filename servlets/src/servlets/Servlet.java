@@ -1,8 +1,11 @@
 package servlets;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
 import java.io.*;
+
+@WebServlet(name = "Servlet", urlPatterns={"/Servlet"})
 class DemoServlet extends HttpServlet{
     public void doGet(HttpServletRequest req,HttpServletResponse res)
             throws ServletException,IOException
